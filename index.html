@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!-- lang="vi" khai báo ngôn ngữ trang → hỗ trợ screen reader & SEO -->
+<html lang="vi">
+
+<head>
+  <!-- ========== METADATA BẮT BUỘC ========== -->
+  <meta charset="UTF-8" />
+  <!-- viewport: nền tảng của responsive mobile-first, khóa tỉ lệ 1:1 với thiết bị -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio CV của Nguyễn Đức Minh– Frontend Developer. Dự án, kỹ năng và thông tin liên hệ." />
+  <meta name="author" content="Nguyễn Văn An" />
+  <title>Nguyễn Đức Minh · Frontend Developer</title>
+
+  <!-- Liên kết tới file CSS tách rời (yêu cầu của bài) -->
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+
+<body>
+
+  <!-- ========================================================== -->
+  <!-- HEADER: nhận diện + điều hướng chính                        -->
+  <!-- ========================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Thương hiệu cá nhân -->
+      <a class="brand" href="#top" aria-label="Về đầu trang">
+        <span class="brand-mark" aria-hidden="true">愛</span>
+        <span class="brand-name">Nguyễn Đức Minh</span>
+      </a>
+
+      <!-- NAV dùng Flexbox (xem styles.css) -->
+      <nav class="main-nav" aria-label="Điều hướng chính">
+        <ul class="nav-list">
+          <li><a href="#about">Giới thiệu</a></li>
+          <li><a href="#skills">Kỹ năng</a></li>
+          <li><a href="#projects">Dự án</a></li>
+          <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================================================== -->
+  <!-- MAIN: toàn bộ nội dung chính của trang                      -->
+  <!-- ========================================================== -->
+  <main id="top">
+    <!-- ----- SECTION: Giới thiệu / Hero ----- -->
+    <section id="about" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">Xin chào, tôi là</p>
+          <h1 class="hero-title">Nguyễn Đức Minh</h1>
+          <p class="hero-role">Undergraduate &amp; Developer</p>
+          <p class="hero-desc">
+            Sinh viên năm nhất ngành Công nghệ thông tin. 
+            sau này muốn trở thành một full-stack developer, mong muốn học hỏi thêm về cyber cercuity
+            
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Xem dự án</a>
+            <a class="btn btn-outline" href="#contact">Liên hệ tôi</a>
+          </div>
+        </div>
+
+        <!-- Ảnh đại diện: dùng placeholder, thay bằng ảnh thật của bạn -->
+        <figure class="hero-avatar">
+          <img
+            src="./assets/img/THPT Hoàng Cầu0806.jpg"
+            alt="Ảnh đại diện của Nguyễn Đức Minh"
+            width="320" height="320" />
+        </figure>
+        
+      </div>
+    </section>
+
+    <!-- ----- SECTION: Kỹ năng ----- -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Kỹ năng</h2>
+        <p class="section-sub">Những công nghệ và kỹ năng tôi sử dụng thường xuyên.</p>
+
+        <ul class="skill-grid">
+          <li class="skill-chip">Python</li>
+          <li class="skill-chip">Guitar</li>
+          <li class="skill-chip">Photoshop</li>
+          <li class="skill-chip">CSS3 / Flexbox / Grid</li>
+          <li class="skill-chip">HTML 5</li>
+          <li class="skill-chip">Translation Skills</li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ----- SECTION: Dự án (danh sách thẻ dùng CSS Grid) ----- -->
+    <section id="projects" class="section section-muted">
+      <div class="container">
+        <h2 class="section-title">Dự án tiêu biểu</h2>
+        <p class="section-sub">Một vài thành tựu tôi đã đạt được.</p>
+
+        <!-- .project-grid dùng CSS Grid (xem styles.css) -->
+        <div class="project-grid">
+
+          <!-- Mỗi thẻ là một <article> độc lập, có thể đứng riêng -->
+          <article class="card">
+            <img class="card-media"
+              src="assets/img/2aOboR447hW1xWvDElgiC9zJo9HrfdCTgGxepZnE.jpg"
+              alt="Ảnh minh họa dự án Landing Page" width="600" height="360" />
+            <div class="card-body">
+              <h3 class="card-title">Chứng chỉ học thuật</h3>
+              <p class="card-desc">
+                Chi tiết bằng và chứng chỉ.
+              </p>
+              <ul class="tag-list">
+                <li>Ielts</li>
+                <li>Giải học sinh giỏi</li>
+                <li>Thư giới thiệu</li>
+              </ul>
+              <a class="card-link" href="#">Xem chi tiết →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card-media"
+              src="assets/img/giainhac1.jpg"
+              alt="Ảnh minh họa dự án Todo App" width="600" height="360" />
+            <div class="card-body">
+              <h3 class="card-title">Chứng chỉ âm nhạc và giải thưởng</h3>
+              <p class="card-desc">
+                Chi tiết chứng chỉ âm nhạc và giải thưởng.
+              </p>
+              <ul class="tag-list">
+                <li>Chứng chỉ trung cấp 7 năm</li>
+                <li>Giải thưởng âm nhạc</li>
+              </ul>
+              <a class="card-link" href="#">Xem chi tiết →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card-media"
+              src="assets/img/464e118d6de2ecbcb5f317.jpg"
+              alt="Ảnh minh họa dự án Weather Dashboard" width="600" height="360" />
+            <div class="card-body">
+              <h3 class="card-title">Chứng nhận hoạt động ngoại khoá</h3>
+              <p class="card-desc">
+                Chi tiết về các chứng nhận hoạt động ngoại khoá.
+              </p>
+              <ul class="tag-list">
+                <li>dự án truyền bá văn hoá</li>
+                <li>dự án tình nguyện</li>
+                <li>dự án hội hoạ</li>
+                <li>dự án học thuật</li>
+                <li>dự án âm nhạc</li>
+
+              </ul>
+              <a class="card-link" href="#">Xem chi tiết →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card-media"
+              src="assets/img/DSC01124.jpg"
+              alt="Ảnh minh họa dự án Blog cá nhân" width="600" height="360" />
+            <div class="card-body">
+              <h3 class="card-title">Giải thưởng thể thao</h3>
+              <p class="card-desc">
+                Chi tiết về các giải thưởng thể thao.
+              </p>
+              <ul class="tag-list">
+                <li>Giải thưởng bóng đá</li>
+                <li>Giải thưởng điền kinh</li>
+              </ul>
+              <a class="card-link" href="#">Xem chi tiết →</a>
+            </div>
+          </article>
+
+        </div><!-- /.project-grid -->
+      </div>
+    </section>
+
+    <!-- ----- SECTION: Liên hệ ----- -->
+    <section id="contact" class="section">
+      <div class="container contact-inner">
+        <h2 class="section-title">Liên hệ</h2>
+        <p class="section-sub">Contact for work.</p>
+
+        <ul class="contact-list">
+  <li>
+    <span class="contact-label">Email</span> 
+    <a href="mailto:ducminhaha@gmail.com">ducminhaha@gmail.com</a>
+  </li>
+  <li>
+    <span class="contact-label">GitHub</span> 
+    <a href="https://github.com/mrsyfox" target="_blank" rel="noopener noreferrer">mrsyfox</a>
+  </li>
+  <li>
+    <span class="contact-label">Instagram</span> 
+    <a href="https://www.instagram.com/mr.syfoxowo/" target="_blank" rel="noopener noreferrer">mr.syfoxowo</a>
+  </li>
+</ul>
+      <!-- Form liên hệ mới -->
+      <form class="contact-form" style="margin-top: 30px;">
+        <div class="form-group" style="margin-bottom: 15px; display: flex; flex-direction: column;">
+          <label for="name" style="color: #fff; margin-bottom: 5px;">Họ và tên</label>
+          <input type="text" id="name" placeholder="Nhập họ và tên của bạn" required style="padding: 10px; background: #1a2238; border: 1px solid #2d3748; color: #fff; border-radius: 5px;">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 15px; display: flex; flex-direction: column;">
+          <label for="email" style="color: #fff; margin-bottom: 5px;">Email</label>
+          <input type="email" id="email" placeholder="Nhập địa chỉ email của bạn" required style="padding: 10px; background: #1a2238; border: 1px solid #2d3748; color: #fff; border-radius: 5px;">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 15px; display: flex; flex-direction: column;">
+          <label for="message" style="color: #fff; margin-bottom: 5px;">Lời nhắn</label>
+          <textarea id="message" rows="4" placeholder="Nhập nội dung..." required style="padding: 10px; background: #1a2238; border: 1px solid #2d3748; color: #fff; border-radius: 5px;"></textarea>
+        </div>
+
+        <button type="submit" style="background-color: #ff3e3e; color: #white; border: none; padding: 10px 20px; font-weight: bold; border-radius: 5px; cursor: pointer;">Gửi tin nhắn</button>
+      </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================== -->
+  <!-- FOOTER                                                      -->
+  <!-- ========================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Nguyễn Đức Minh. Thiết kế &amp; xây dựng bằng HTML5 + CSS3.</p>
+      <a href="#top" class="to-top">↑ Lên đầu trang</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>
