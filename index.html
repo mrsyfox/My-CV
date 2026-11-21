@@ -13,6 +13,9 @@
 
   <!-- Liên kết tới file CSS tách rời (yêu cầu của bài) -->
   <link rel="stylesheet" href="./assets/css/styles.css" />
+  <script>
+    document.documentElement.classList.add("reveal-enabled");
+  </script>
 </head>
 
 <body>
@@ -76,16 +79,16 @@
     <!-- ----- SECTION: Kỹ năng ----- -->
     <section id="skills" class="section">
       <div class="container">
-        <h2 class="section-title">Kỹ năng</h2>
-        <p class="section-sub">Những công nghệ và kỹ năng tôi sử dụng thường xuyên.</p>
+        <h2 class="section-title" data-reveal>Kỹ năng</h2>
+        <p class="section-sub" data-reveal>Những công nghệ và kỹ năng tôi sử dụng thường xuyên.</p>
 
         <ul class="skill-grid">
-          <li class="skill-chip">Python</li>
-          <li class="skill-chip">Guitar</li>
-          <li class="skill-chip">Photoshop</li>
-          <li class="skill-chip">CSS3 / Flexbox / Grid</li>
-          <li class="skill-chip">HTML 5</li>
-          <li class="skill-chip">Translation Skills</li>
+          <li class="skill-chip" data-reveal>Python</li>
+          <li class="skill-chip" data-reveal>Guitar</li>
+          <li class="skill-chip" data-reveal>Photoshop</li>
+          <li class="skill-chip" data-reveal>CSS3 / Flexbox / Grid</li>
+          <li class="skill-chip" data-reveal>HTML 5</li>
+          <li class="skill-chip" data-reveal>Translation Skills</li>
 
         </ul>
       </div>
@@ -94,14 +97,14 @@
     <!-- ----- SECTION: Dự án (danh sách thẻ dùng CSS Grid) ----- -->
     <section id="projects" class="section section-muted">
       <div class="container">
-        <h2 class="section-title">Dự án tiêu biểu</h2>
-        <p class="section-sub">Một vài thành tựu tôi đã đạt được.</p>
+        <h2 class="section-title" data-reveal>Dự án tiêu biểu</h2>
+        <p class="section-sub" data-reveal>Một vài thành tựu tôi đã đạt được.</p>
 
         <!-- .project-grid dùng CSS Grid (xem styles.css) -->
         <div class="project-grid">
 
           <!-- Mỗi thẻ là một <article> độc lập, có thể đứng riêng -->
-          <article class="card">
+          <article class="card" data-reveal>
             <img class="card-media"
               src="assets/img/2aOboR447hW1xWvDElgiC9zJo9HrfdCTgGxepZnE.jpg"
               alt="Ảnh minh họa chứng chỉ học thuật" width="600" height="360" />
@@ -118,7 +121,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-reveal>
             <img class="card-media"
               src="assets/img/giainhac1.jpg"
               alt="Ảnh minh họa chứng chỉ âm nhạc và giải thưởng" width="600" height="360" />
@@ -134,7 +137,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-reveal>
             <img class="card-media"
               src="assets/img/464e118d6de2ecbcb5f317.jpg"
               alt="Ảnh minh họa chứng nhận hoạt động ngoại khóa" width="600" height="360" />
@@ -154,7 +157,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-reveal>
             <img class="card-media"
               src="assets/img/DSC01124.jpg"
               alt="Ảnh minh họa giải thưởng thể thao" width="600" height="360" />
@@ -177,10 +180,10 @@
     <!-- ----- SECTION: Liên hệ ----- -->
     <section id="contact" class="section">
       <div class="container contact-inner">
-        <h2 class="section-title">Liên hệ</h2>
-        <p class="section-sub">Contact for work.</p>
+        <h2 class="section-title" data-reveal>Liên hệ</h2>
+        <p class="section-sub" data-reveal>Contact for work.</p>
 
-        <ul class="contact-list">
+        <ul class="contact-list" data-reveal>
   <li>
     <span class="contact-label">Email</span> 
     <a href="mailto:ducminhaha@gmail.com">ducminhaha@gmail.com</a>
@@ -195,7 +198,7 @@
   </li>
 </ul>
       <!-- Form liên hệ mới -->
-      <form class="contact-form" action="mailto:ducminhaha@gmail.com" method="post" enctype="text/plain" style="margin-top: 30px;">
+      <form class="contact-form" data-reveal action="mailto:ducminhaha@gmail.com" method="post" enctype="text/plain" style="margin-top: 30px;">
         <div class="form-group" style="margin-bottom: 15px; display: flex; flex-direction: column;">
           <label for="name" style="color: #fff; margin-bottom: 5px;">Họ và tên</label>
           <input type="text" id="name" name="name" placeholder="Nhập họ và tên của bạn" required style="padding: 10px; background: #1a2238; border: 1px solid #2d3748; color: #fff; border-radius: 5px;">
@@ -228,6 +231,29 @@
     </div>
   </footer>
 
+  <script>
+    (() => {
+      const revealItems = document.querySelectorAll("[data-reveal]");
+
+      if (!("IntersectionObserver" in window)) {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries, revealObserver) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -24px 0px"
+      });
+
+      revealItems.forEach((item) => observer.observe(item));
+    })();
+  </script>
 </body>
 
 </html>
